@@ -9,5 +9,14 @@ namespace GADE_POE_Part_1
     internal class Level
     {
         private int[][] Tile = new double[6][10];
+
+        public Level(int width, int height)
+        {
+        }
+
+        internal string RenderToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
