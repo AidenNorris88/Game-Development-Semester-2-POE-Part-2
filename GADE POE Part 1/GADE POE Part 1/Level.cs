@@ -19,6 +19,7 @@ namespace GADE_POE_Part_1
         private Tile[,] tiles;
         private int width;
         private int height;
+        internal Tile[,] Tiles;
 
         public int Width => width;
         public int Height => height;
@@ -80,6 +81,11 @@ namespace GADE_POE_Part_1
             }
 
             return sb.ToString();
+        }
+
+        internal string RenderToString()
+        {
+            throw new NotImplementedException();
         }
     }
 }
