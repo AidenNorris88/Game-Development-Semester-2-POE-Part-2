@@ -19,6 +19,46 @@ namespace GADE_POE_Part_1
             UpdateDisplay();
         }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            Direction? dir = null;
+            switch (keyData)
+            {
+                case Keys.Up: dir = Direction.Up; break;
+                case Keys.Right: dir = Direction.Right; break;
+                case Keys.Down: dir = Direction.Down; break;
+                case Keys.Left: dir = Direction.Left; break;
+            }
+
+            if (dir.HasValue)
+            {
+                gameEngine.MoveHero(dir.Value); // Move the hero
+
+                // Now check if hero is on the exit
+                var heroPos = gameEngine.CurrentLevel.Hero.Position;
+                var exitPos = gameEngine.CurrentLevel.Exit.Position;
+
+                UpdateDisplay(); // Show updated map
+
+                if (heroPos.X == exitPos.X && heroPos.Y == exitPos.Y)
+                {
+                    // Advance to next level
+                    if (gameEngine.NextLevel())
+                    {
+                        MessageBox.Show("Level Complete! Moving to next level.");
+                        UpdateDisplay(); // Show new level
+                    }
+                    else
+                    {
+                        MessageBox.Show("Congratulations! You finished all levels!");
+                    }
+                }
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         private void UpdateDisplay()
         {
             // Call GameEngine’s ToString() and display it
@@ -34,5 +74,11 @@ namespace GADE_POE_Part_1
         {
             // Click logic here if needed
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

@@ -4,43 +4,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace GADE_POE_Part_1
 {
     internal class GameEngineClass
     {
         public class GameEngine
         {
-            // === Fields ===
-            private Level currentLevel;
-            private int numLevels;
+            private List<Level> levels;
+            private int currentLevelIndex;
             private Random rng;
 
-            private const int MIN_SIZE = 10;   // constants
+            private const int MIN_SIZE = 10;
             private const int MAX_SIZE = 20;
 
-            public GameEngine(int numberOfLevels)  //constructor
+            public GameEngine(int numberOfLevels)
             {
-                numLevels = numberOfLevels;
                 rng = new Random();
+                levels = new List<Level>();
 
-                // Randomize size of the level
-                int width = rng.Next(MIN_SIZE, MAX_SIZE + 1);
-                int height = rng.Next(MIN_SIZE, MAX_SIZE + 1);
-
-                currentLevel = new Level(width, height);    // Create the level
-            }
-
-            // ToString override
-            public override string ToString()
-            {
-                return currentLevel.ToString();
+                for (int i = 0; i < numberOfLevels; i++)
+                {
+                    int width = rng.Next(MIN_SIZE, MAX_SIZE + 1);
+                    int height = rng.Next(MIN_SIZE, MAX_SIZE + 1);
+                    levels.Add(new Level(width, height));
+                }
+                currentLevelIndex = 0;
             }
 
             public Level CurrentLevel
             {
-                get { return currentLevel; }
+                get { return levels[currentLevelIndex]; }
+            }
+
+            public bool NextLevel()
+            {
+                if (currentLevelIndex < levels.Count - 1)
+                {
+                    currentLevelIndex++;
+                    return true;
+                }
+                return false;
+            }
+
+            public override string ToString()
+            {
+                return CurrentLevel.ToString();
+            }
+
+            public bool MoveHero(Direction direction)
+            {
+                return CurrentLevel.MoveHero(direction);
             }
         }
     }
-
 }

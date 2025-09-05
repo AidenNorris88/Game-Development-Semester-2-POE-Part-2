@@ -25,6 +25,34 @@ namespace GADE_POE_Part_1
         public int Width { get; internal set; }
         public int Height { get; internal set; }
 
+        public bool MoveHero(Direction direction)
+        {
+            int newX = hero.X;
+            int newY = hero.Y;
+
+            switch (direction)
+            {
+                case Direction.Up: newY--; break;
+                case Direction.Right: newX++; break;
+                case Direction.Down: newY++; break;
+                case Direction.Left: newX--; break;
+                default: return false;
+            }
+
+            // Check boundaries and wall collision
+            if (newX < 0 || newY < 0 || newX >= tiles.GetLength(0) || newY >= tiles.GetLength(1))
+                return false;
+            if (tiles[newX, newY] is WallTile)
+                return false;
+
+            // Move hero
+            tiles[hero.X, hero.Y] = new EmptyTile(new Position(hero.X, hero.Y)); // clear old spot
+            hero.Position = new Position(newX, newY);
+            tiles[newX, newY] = hero;
+
+            return true;
+        }
+
         // Enum that defines tile types
         public enum TileType
         {
