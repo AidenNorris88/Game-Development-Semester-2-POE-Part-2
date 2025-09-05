@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GADE_POE_Part_1
 {
-    internal class CharacterTile
+    internal class CharacterTile : Tile
     {
         // === Fields ===
             protected int hitPoints;
@@ -20,8 +20,9 @@ namespace GADE_POE_Part_1
             public int AttackPower { get => attackPower; }
             public bool IsDead { get => hitPoints <= 0; }
 
-            // === Constructor ===
-            public CharacterTile(Position position, int hitPoints, int attackPower)
+        public override char Display => '?'; // Or any default character you want for CharacterTile
+                                             // === Constructor ===
+        public CharacterTile(Position position, int hitPoints, int attackPower)
                 : base(position)
             {
                 this.hitPoints = hitPoints;

@@ -10,7 +10,7 @@ namespace GADE_POE_Part_1
     internal abstract class Tile
     {
         //private field of type Position
-        private Position Position;
+        private readonly Position Position;
 
         // this exposes the x value in the Position field
         public int X
