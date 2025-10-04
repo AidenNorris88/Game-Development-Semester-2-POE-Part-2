@@ -42,13 +42,13 @@ namespace GADE_POE_Part_1
             int y = this.Y;
 
             // 0 = Up
-            vision[0] = (y > 0) ? map[y - 1, x] : null;
+            vision[0] = (y > 0) ? map[x, y - 1] : null;
             // 1 = Right
-            vision[1] = (x < level.Width - 1) ? map[y, x + 1] : null;
+            vision[1] = (x < level.Width - 1) ? map[x + 1, y] : null;
             // 2 = Down
-            vision[2] = (y < level.Height - 1) ? map[y + 1, x] : null;
+            vision[2] = (y < level.Height - 1) ? map[x, y + 1] : null;
             // 3 = Left
-            vision[3] = (x > 0) ? map[y, x - 1] : null;
+            vision[3] = (x > 0) ? map[x - 1, y] : null;
         }
 
         // Required because Tile is abstract
