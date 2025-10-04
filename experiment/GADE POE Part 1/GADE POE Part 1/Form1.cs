@@ -13,7 +13,7 @@ namespace GADE_POE_Part_1
             InitializeComponent();
 
             // Initialise GameEngine with number of levels = 10
-            gameEngine = new GameEngine(10);
+            gameEngine = new GameEngine(10, 1, 1);
 
             // Display the first level
             UpdateDisplay();

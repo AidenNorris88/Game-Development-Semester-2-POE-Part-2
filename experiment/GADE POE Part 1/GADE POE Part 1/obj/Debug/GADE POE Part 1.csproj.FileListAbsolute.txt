@@ -9,3 +9,13 @@ C:\Users\OEM\Documents\New folder\New folder\experiment\GADE POE Part 1\GADE POE
 C:\Users\OEM\Documents\New folder\New folder\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.exe
 C:\Users\OEM\Documents\New folder\New folder\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.pdb
 C:\Users\OEM\Documents\New folder\New folder\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.exe.config
+C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\bin\Debug\GADE POE Part 1.exe.config
+C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\bin\Debug\GADE POE Part 1.exe
+C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\bin\Debug\GADE POE Part 1.pdb
+C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.csproj.AssemblyReference.cache
+C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE_POE_Part_1.Form1.resources
+C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE_POE_Part_1.Properties.Resources.resources
+C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.csproj.GenerateResource.cache
+C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.csproj.CoreCompileInputs.cache
+C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.exe
+C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.pdb

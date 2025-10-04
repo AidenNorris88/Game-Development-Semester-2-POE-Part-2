@@ -59,12 +59,15 @@ namespace GADE_POE_Part_1
             Empty,
             Wall,
             Hero,
-            Exit
+            Exit,
+            Enemy
         }
 
         // --- Constructor ---
-        public Level(int width, int height, HeroTile existingHero = null)
+        public Level(int width, int height, int numberofEnemies, HeroTile existingHero = null)
         {
+            Width = width;
+            Height = height;
             tiles = new Tile[width, height];
             InitializeTiles(width, height);
 
@@ -84,6 +87,19 @@ namespace GADE_POE_Part_1
             // Place exit
             Position exitPos = GetRandomEmptyPosition();
             exit = (ExitTile)CreateTile(TileType.Exit, exitPos);
+            // PLace enemy
+            EnemyTile[] enemies = new EnemyTile[numberofEnemies];
+            for (int i = 0; i < numberofEnemies; i++)
+            {
+                Position enemyPos = GetRandomEmptyPosition();
+                enemies[i] = (EnemyTile)CreateTile(TileType.Enemy, enemyPos);
+            }
+        }
+
+        public Level(int width, int height)
+        {
+            Width = width;
+            Height = height;
         }
 
         // --- CreateTile Method ---
@@ -102,6 +118,9 @@ namespace GADE_POE_Part_1
                     break;
                 case TileType.Exit:
                     tiles[pos.X, pos.Y] = new ExitTile(pos);
+                    break;
+                case TileType.Enemy:
+                    tiles[pos.X, pos.Y] = new GruntTile(pos);
                     break;
             }
             return tiles[pos.X, pos.Y];
@@ -155,6 +174,38 @@ namespace GADE_POE_Part_1
             }
 
             return map;
+        }
+
+
+        public void UpdateVision()
+        {
+            hero.UpdateVision(this);
+
+            foreach (Tile tile in tiles)
+            {
+                if (tile is EnemyTile enemy)
+                {
+                    enemy.UpdateVision(this);
+                }
+            }
+
+
+        }
+
+        internal void SwapTiles(EnemyTile enemy, Tile targetTile)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal IEnumerable<EnemyTile> GetEnemies()
+        {
+            foreach (var tile in tiles)
+            {
+                if (tile is EnemyTile enemy)
+                {
+                    yield return enemy;
+                }
+            }
         }
     }
 }
