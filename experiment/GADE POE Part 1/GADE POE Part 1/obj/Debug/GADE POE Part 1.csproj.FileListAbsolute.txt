@@ -19,3 +19,12 @@ C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GA
 C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.csproj.CoreCompileInputs.cache
 C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.exe
 C:\Users\Damon\source\repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.pdb
+C:\Users\OEM\Source\Repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\bin\Debug\GADE POE Part 1.exe
+C:\Users\OEM\Source\Repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\bin\Debug\GADE POE Part 1.exe.config
+C:\Users\OEM\Source\Repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.csproj.AssemblyReference.cache
+C:\Users\OEM\Source\Repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE_POE_Part_1.Form1.resources
+C:\Users\OEM\Source\Repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE_POE_Part_1.Properties.Resources.resources
+C:\Users\OEM\Source\Repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.csproj.GenerateResource.cache
+C:\Users\OEM\Source\Repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.csproj.CoreCompileInputs.cache
+C:\Users\OEM\Source\Repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.exe
+C:\Users\OEM\Source\Repos\Game-Development-Semester-2-POE-Part-2\experiment\GADE POE Part 1\GADE POE Part 1\obj\Debug\GADE POE Part 1.pdb

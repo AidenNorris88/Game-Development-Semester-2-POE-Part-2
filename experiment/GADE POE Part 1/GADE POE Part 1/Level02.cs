@@ -95,6 +95,9 @@ namespace GADE_POE_Part_1
                 Position enemyPos = GetRandomEmptyPosition();
                 enemies[i] = (EnemyTile)CreateTile(TileType.Enemy, enemyPos);
             }
+
+            ItemTile[] pickups = new ItemTile[numberofPickups];
+
             // ✅ Place pickups
             for (int i = 0; i < numberofPickups; i++)
             {

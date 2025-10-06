@@ -71,6 +71,8 @@ namespace GADE_POE_Part_1
             }
 
             public int HeroCounter = 0;
+            private GameState gameState;
+
             public bool MoveHero(Direction direction)
             {
                 bool moved = CurrentLevel.MoveHero(direction);
@@ -88,6 +90,23 @@ namespace GADE_POE_Part_1
                 return moved;
             }
 
+            private bool HeroAttack(Direction direction)
+            {
+                // Guard clause: Prevent action if game is over
+                if (gameState == GameState.GameOver)
+                    return false;
+
+                // Assuming Hero has a Vision[] array in order: Up, Down, Left, Right or similar
+                int index = (int)direction;
+                Tile targetTile = hero.Vision[index];
+
+                if (targetTile is CharacterTile target && target != null)
+                {
+                    hero.Attack(target);
+                    return true;
+                }
+                return false;
+            }
             private void MoveEnemies()
             {
                 
