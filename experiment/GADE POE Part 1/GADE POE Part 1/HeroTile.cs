@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GADE_POE_Part_1.GameEngineClass;
 
 namespace GADE_POE_Part_1
 {
@@ -20,5 +21,8 @@ namespace GADE_POE_Part_1
                 return IsDead ? 'X' : 'H';
             }
         }
+
+     
+
     }
 }

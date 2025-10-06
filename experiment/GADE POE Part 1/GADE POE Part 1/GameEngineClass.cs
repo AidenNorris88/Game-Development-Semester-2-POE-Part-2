@@ -29,7 +29,7 @@ namespace GADE_POE_Part_1
                 {
                     int width = rng.Next(MIN_SIZE, MAX_SIZE + 1);
                     int height = rng.Next(MIN_SIZE, MAX_SIZE + 1);
-                    levels.Add(new Level(width, height, numberofEnemies, 1));
+                    levels.Add(new Level(width, height, i+1, 1));
                     currentLevelNumber++;
                 }
                 currentLevelIndex = 0;
@@ -96,11 +96,13 @@ namespace GADE_POE_Part_1
                 if (gameState == GameState.GameOver)
                     return false;
 
+              HeroTile hero = CurrentLevel.Hero;
+
                 // Assuming Hero has a Vision[] array in order: Up, Down, Left, Right or similar
                 int index = (int)direction;
-                Tile targetTile = hero.Vision[index];
+                Tile Tile = hero.Vision[index];
 
-                if (targetTile is CharacterTile target && target != null)
+                if (Tile is CharacterTile target && target != null)
                 {
                     hero.Attack(target);
                     return true;

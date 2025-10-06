@@ -11,11 +11,7 @@ namespace GADE_POE_Part_1
         public Form1()
         {
             InitializeComponent();
-
-            // Initialise GameEngine with number of levels = 10
             gameEngine = new GameEngine(10, 1, 1, 1);
-
-            // Display the first level
             UpdateDisplay();
         }
 
@@ -32,21 +28,16 @@ namespace GADE_POE_Part_1
 
             if (dir.HasValue)
             {
-                gameEngine.MoveHero(dir.Value); // Move the hero
-
-                // Now check if hero is on the exit
+                gameEngine.MoveHero(dir.Value);
                 var heroPos = gameEngine.CurrentLevel.Hero.Position;
                 var exitPos = gameEngine.CurrentLevel.Exit.Position;
-
-                UpdateDisplay(); // Show updated map
-
+                UpdateDisplay();
                 if (heroPos.X == exitPos.X && heroPos.Y == exitPos.Y)
                 {
-                    // Advance to next level
                     if (gameEngine.NextLevel())
                     {
                         MessageBox.Show("Level Complete! Moving to next level.");
-                        UpdateDisplay(); // Show new level
+                        UpdateDisplay();
                     }
                     else
                     {
@@ -59,12 +50,24 @@ namespace GADE_POE_Part_1
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
+        // This is your display update method. Only this version should exist!
         private void UpdateDisplay()
         {
-            // Call GameEngine’s ToString() and display it
             lblDisplay.Text = gameEngine.ToString();
+            UpdateHeroStats();
         }
 
+        // This is your hero stats update method.
+        private void UpdateHeroStats()
+        {
+            var hero = gameEngine.CurrentLevel.Hero;
+            lblHerostats.Text =
+                $"Hero Stats:\n" +
+                $"HP: {hero.HitPoints}/{hero.MaxHitPoints}\n" +
+                $"Attack: {hero.AttackPower}";
+        }
+
+        // If you have an event handler for painting, make sure it has a unique name:
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
             // Paint logic here if needed
@@ -77,8 +80,7 @@ namespace GADE_POE_Part_1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            // Any logic here if needed
         }
-
     }
 }

@@ -14,7 +14,7 @@ namespace GADE_POE_Part_1
         public int MaxHitPoints { get => maxHitPoints; }
         public int AttackPower { get => attackPower; }
         public bool IsDead { get => hitPoints <= 0; }
-
+        public Tile[] Vision => vision;
         public CharacterTile(Position position, int hitPoints, int attackPower)
             : base(position)
         {

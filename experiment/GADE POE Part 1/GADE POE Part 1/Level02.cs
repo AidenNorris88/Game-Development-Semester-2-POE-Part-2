@@ -96,7 +96,7 @@ namespace GADE_POE_Part_1
                 enemies[i] = (EnemyTile)CreateTile(TileType.Enemy, enemyPos);
             }
 
-            ItemTile[] pickups = new ItemTile[numberofPickups];
+            pickup = new PickupTile[numberofPickups];
 
             // ✅ Place pickups
             for (int i = 0; i < numberofPickups; i++)
@@ -221,6 +221,10 @@ namespace GADE_POE_Part_1
             }
         }
 
-        
+        public HeroTile GetHero()
+        {
+            return hero;
+        }
+
     }
 }
