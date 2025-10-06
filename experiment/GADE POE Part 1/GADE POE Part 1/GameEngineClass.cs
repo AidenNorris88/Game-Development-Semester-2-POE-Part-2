@@ -19,7 +19,8 @@ namespace GADE_POE_Part_1
             private const int MIN_SIZE = 10;
             private const int MAX_SIZE = 20;
             private int currentLevelNumber = 1;
-            public GameEngine(int numberOfLevels, int numberofEnemies, int currentLevelNumber)
+            
+            public GameEngine(int numberOfLevels, int numberofEnemies, int currentLevelNumber, int numberofPickup)
             {
                 rng = new Random();
                 levels = new List<Level>();
@@ -28,7 +29,7 @@ namespace GADE_POE_Part_1
                 {
                     int width = rng.Next(MIN_SIZE, MAX_SIZE + 1);
                     int height = rng.Next(MIN_SIZE, MAX_SIZE + 1);
-                    levels.Add(new Level(width, height, numberofEnemies));
+                    levels.Add(new Level(width, height, numberofEnemies, 1));
                     currentLevelNumber++;
                 }
                 currentLevelIndex = 0;
@@ -58,7 +59,7 @@ namespace GADE_POE_Part_1
                     int height = rng.Next(MIN_SIZE, MAX_SIZE + 1);
 
                     currentLevelNumber++;
-                    levels.Add(new Level(width, height, currentLevelNumber));
+                    levels.Add(new Level(width, height, currentLevelNumber, 1));
                     currentLevelIndex++;
                 }
                 return false;

@@ -60,9 +60,11 @@
     <Compile Include="GameEngineClass.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="GruntTile.cs" />
+    <Compile Include="HealthPickupTile.cs" />
     <Compile Include="HeroClass.cs" />
     <Compile Include="HeroTile.cs" />
     <Compile Include="Level02.cs" />
+    <Compile Include="PickupTile.cs" />
     <Compile Include="PositionClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

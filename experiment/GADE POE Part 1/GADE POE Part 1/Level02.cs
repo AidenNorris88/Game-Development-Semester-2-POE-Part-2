@@ -14,14 +14,14 @@ namespace GADE_POE_Part_1
         private Tile[,] tiles;             // 2D map grid
         private HeroTile hero;             // reference to hero
         private ExitTile exit;             // reference to exit
-
+        private PickupTile[] pickup;    // pickup array
         private static Random rng = new Random();
 
         // --- Properties ---
         public HeroTile Hero => hero;      // expose hero
         public ExitTile Exit => exit;      // expose exit
         public Tile[,] Tiles => tiles;     // expose whole grid
-
+        public PickupTile[] Pickup => pickup; // expose pickups
         public int Width { get; internal set; }
         public int Height { get; internal set; }
 
@@ -60,11 +60,12 @@ namespace GADE_POE_Part_1
             Wall,
             Hero,
             Exit,
-            Enemy
+            Enemy,
+            Pickup
         }
 
         // --- Constructor ---
-        public Level(int width, int height, int numberofEnemies, HeroTile existingHero = null)
+        public Level(int width, int height, int numberofEnemies, int numberofPickups, HeroTile existingHero = null)
         {
             Width = width;
             Height = height;
@@ -94,6 +95,12 @@ namespace GADE_POE_Part_1
                 Position enemyPos = GetRandomEmptyPosition();
                 enemies[i] = (EnemyTile)CreateTile(TileType.Enemy, enemyPos);
             }
+            // ✅ Place pickups
+            for (int i = 0; i < numberofPickups; i++)
+            {
+                Position pickupPos = GetRandomEmptyPosition();
+                pickup[i] = (PickupTile)CreateTile(TileType.Pickup, pickupPos);
+            }
         }
 
         public Level(int width, int height)
@@ -121,6 +128,9 @@ namespace GADE_POE_Part_1
                     break;
                 case TileType.Enemy:
                     tiles[pos.X, pos.Y] = new GruntTile(pos);
+                    break;
+                case TileType.Pickup:
+                    tiles[pos.X, pos.Y] = new HealthPickupTile(pos);
                     break;
             }
             return tiles[pos.X, pos.Y];
@@ -207,5 +217,7 @@ namespace GADE_POE_Part_1
                 }
             }
         }
+
+        
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Remoting.Messaging;
 
 namespace GADE_POE_Part_1
 {
@@ -51,6 +52,17 @@ namespace GADE_POE_Part_1
             vision[3] = (x > 0) ? map[x - 1, y] : null;
         }
 
+        public int Heal(int amount)
+        {
+            hitPoints += amount;
+            if (hitPoints > maxHitPoints)
+            {
+                hitPoints = maxHitPoints;
+            }
+
+            return hitPoints;
+        }
+       
         // Required because Tile is abstract
         public override char Display => '?'; // Or choose a suitable default
     }
